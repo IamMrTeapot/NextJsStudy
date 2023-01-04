@@ -1,7 +1,7 @@
 import React from "react";
 
 function index() {
-  return <div>Home Page</div>;
+  return <div>blog home page</div>;
 }
 
 export default index;
