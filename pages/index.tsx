@@ -1,7 +1,25 @@
-import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-function index() {
-  return <div>Home Page</div>;
+function Home() {
+  const router = useRouter();
+  const handleOnClick = () => {
+    console.log("PLacing your order");
+    router.push("/product");
+  };
+
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <Link href="/blog">
+        <a>Blog</a>
+      </Link>
+      <Link href="/product">
+        <a>Products</a>
+      </Link>
+      <button onClick={handleOnClick}>Place Order</button>
+    </div>
+  );
 }
 
-export default index;
+export default Home;
