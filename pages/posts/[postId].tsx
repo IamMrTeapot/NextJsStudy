@@ -24,7 +24,7 @@ function Post({ post = { id: 1, title: "hiasadasd" } }) {
 export default Post;
 
 export async function getStaticPaths() {
-  const response = await fetch(`https://jsonplaecholder.typicode.com/posts`);
+  const response = await fetch(`https://jsonplaceholder.typicode.com/posts`);
   const data: withId[] = await response.json();
 
   const paths = data.map((post) => {
@@ -44,7 +44,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context = { params: { postId: 1 } }) {
   const { params } = context;
   const response = await fetch(
-    `https://jsonplaecholder.typicode.com/posts/${params.postId}`
+    `https://jsonplaceholder.typicode.com/posts/${params.postId}`
   );
   const data = await response.json();
 

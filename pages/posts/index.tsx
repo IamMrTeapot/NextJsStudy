@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function PostList({ posts = [{ id: 1, title: "titlesdfsdf" }] }) {
   return (
     <div>
@@ -6,9 +8,12 @@ function PostList({ posts = [{ id: 1, title: "titlesdfsdf" }] }) {
       {posts.map((post) => {
         return (
           <div key={post.id}>
-            <h2>
-              {post.id} {post.title}
-            </h2>
+            <Link href={`posts/${post.id}`}>
+              <h2>
+                {post.id} {post.title}
+              </h2>
+            </Link>
+
             <hr />
           </div>
         );
@@ -20,12 +25,14 @@ function PostList({ posts = [{ id: 1, title: "titlesdfsdf" }] }) {
 export default PostList;
 
 export async function getStaticProps() {
-  const response = await fetch(`https://jsonplaecholder.typicode.com/posts`);
+  console.log("Generating / Regenerating ProductList");
+  const response = await fetch(`https://jsonplaceholder.typicode.com/posts`);
   const data = await response.json();
 
   return {
     props: {
       posts: data.slice(0, 3),
     },
+    revalidate: 10,
   };
 }
