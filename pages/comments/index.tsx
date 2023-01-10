@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CommentId from "../api/comments/[commentId]";
 
 function CommentPage() {
   const [comments, setComments] = useState([{ id: 1, text: "init" }]);
@@ -20,6 +21,16 @@ function CommentPage() {
     });
     const data = await response.json();
     console.log(data);
+    fetchComments();
+  };
+
+  const deleteComment = async (commentId: number) => {
+    const response = await fetch(`/api/comments/${commentId}`, {
+      method: "DELETE",
+    });
+    const data = await response.json();
+    console.log(data);
+    fetchComments();
   };
 
   return (
@@ -34,8 +45,8 @@ function CommentPage() {
       {comments.map((comment) => {
         return (
           <div key={comment.id}>
-            {" "}
             {comment.id} {comment.text}
+            <button onClick={() => deleteComment(comment.id)}>Delete</button>
           </div>
         );
       })}
