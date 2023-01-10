@@ -25,7 +25,7 @@ function Product({ product = { id: 1, title: "hiasadasd", price: 100 } }) {
 export default Product;
 
 export async function getStaticPaths() {
-  const response = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+  const response = await fetch(`http://localhost:4000/products/`);
   const data: withId[] = await response.json();
 
   const paths = data.map((product) => {
@@ -47,7 +47,7 @@ export async function getStaticProps(context = { params: { productId: 1 } }) {
   console.log(`Regenerating product ${params.productId}`);
 
   const response = await fetch(
-    `https://localhost:4000/products/${params.productId}`
+    `http://localhost:4000/products/${params.productId}`
   );
   const data = await response.json();
 

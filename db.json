@@ -38,5 +38,11 @@
             "description": "News article 3",
             "category": "sports"
         }
-    ]
+    ],
+    "dashboard": {
+        "posts": 5,
+        "likes": 1500,
+        "followers": 20,
+        "following": 50
+    }
 }

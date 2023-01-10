@@ -54,7 +54,7 @@ export async function getStaticProps(context = { params: { postId: 1 } }) {
     };
   }
 
-  console.log(`Generating page fo r/posts/${params.postId}`);
+  console.log(`Generating page for /posts/${params.postId}`);
 
   return {
     props: {

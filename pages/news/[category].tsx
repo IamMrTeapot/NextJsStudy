@@ -22,7 +22,7 @@ function ArticleListByCategory({
       </h1>
       {articles.map((article) => {
         return (
-          <div>
+          <div key={article.id}>
             <h2>
               {article.id} {article.title}
             </h2>
