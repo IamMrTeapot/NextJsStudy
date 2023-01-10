@@ -44,5 +44,42 @@
         "likes": 1500,
         "followers": 20,
         "following": 50
-    }
+    },
+    "events" : [
+        {
+            "id":1,
+            "title":"Event 1",
+            "description": "Description 1",
+            "category": "sports",
+            "data" : "date 1"
+        },
+        {
+            "id":2,
+            "title":"Event 2",
+            "description": "Description 2",
+            "category": "technology",
+            "data" : "date 2"
+        },
+        {
+            "id":3,
+            "title":"Event 3",
+            "description": "Description 3",
+            "category": "food",
+            "data" : "date 3"
+        },
+        {
+            "id":4,
+            "title":"Event 4",
+            "description": "Description 4",
+            "category": "sports",
+            "data" : "date 4"
+        },
+        {
+            "id":5,
+            "title":"Event 5",
+            "description": "Description 5",
+            "category": "sports",
+            "data" : "date 5"
+        }
+    ]
 }
