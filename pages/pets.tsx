@@ -1,5 +1,5 @@
 import Image from "next/image";
-import img from "../public/1.jpg";
+import img from "public/1.jpg";
 
 function PetsPage() {
   return (
