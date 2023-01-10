@@ -15,6 +15,9 @@ function PetsPage() {
         );
       })}
     </div>
+
+    //to export static file, We cant use Image tag from next
+    //<div>Pets</div>
   );
 }
 
